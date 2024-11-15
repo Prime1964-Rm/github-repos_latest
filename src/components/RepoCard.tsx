@@ -9,7 +9,7 @@ import {
 } from "@/contexts/githubUserContext";
 
 export default function RepoCard(props: any) {
-  const { name, private: isPrivate, description, language }: any = props;
+  const { name, private: isPrivate, language }: any = props;
   const { selectedData, setSelectedData }: any = useRepoDetailsContext(
     RepoDetailsContext
   );
@@ -20,8 +20,8 @@ export default function RepoCard(props: any) {
         {name} <Badge>{isPrivate ? "Private" : "Public"}</Badge>
       </span>
       <span className="description">
-        {truncateDescription(description, 20)}
-        {description && (
+        {props?.description && truncateDescription(props?.description, 20)}
+        {props?.description && (
           <Link
             href={`/repos/profile/${name}`}
             onClick={() => setSelectedData(props)}

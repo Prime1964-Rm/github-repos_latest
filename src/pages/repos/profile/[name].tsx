@@ -23,7 +23,7 @@ const Profile = ({ repo1 }: any) => {
           </h1>
 
           <p className="text-gray-700 dark:text-gray-300 mb-4">
-            {repo.description || "No description available."}
+            {repo?.description || "No description available."}
           </p>
 
           <div className="text-sm mb-4">
@@ -32,15 +32,15 @@ const Profile = ({ repo1 }: any) => {
 
           <div className="grid grid-cols-3 gap-4 text-sm">
             <div>
-              <span className="font-semibold">Forks:</span> {repo.forks_count}
+              <span className="font-semibold">Forks:</span> {repo?.forks_count}
             </div>
             <div>
               <span className="font-semibold">Open Issues:</span>{" "}
-              {repo.open_issues_count}
+              {repo?.open_issues_count}
             </div>
             <div>
               <span className="font-semibold">Watchers:</span>{" "}
-              {repo.watchers_count}
+              {repo?.watchers_count}
             </div>
           </div>
         </div>
